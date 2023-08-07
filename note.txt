@@ -1,0 +1,16 @@
+data binding in angular
+--------------------------
+
+ts - component
+html - view
+
+1 - one way binding
+
+   1.1 - component to view(ts to html)
+        1.1.1 - string interpolation{{}}
+        1.1.2 - property binding [property]="data"
+
+
+   1.2 - view to component
+        1.2.1 - event binding (event)="method()"
+        1.2.2 - $event binding - onchange - change (event)="method($event)"

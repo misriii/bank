@@ -1,0 +1,92 @@
+
+.buttons1{
+  padding: 42px 83px 42px 83px;
+  border: none;
+  background-color: #2F3C7E;
+  font-size: 20px;
+  font-weight: bolder;
+  color: #FBEAEB;
+  transition: .5s ease-in-out;
+
+}
+
+
+.buttoncls{
+  background-color: #2F3C7E;
+  border: #2F3C7E;
+}
+
+.buttons1:hover{
+  transform: scale(1.03);
+}
+
+.division-1{
+  padding: 120px;
+  background-color: #FBEAEB;
+}
+
+h1, h3{
+  color: #2F3C7E;
+  font-weight: bolder;
+}
+
+span{
+  color: crimson;
+}
+
+.para1{
+  font-size: 30px;
+  font-weight: bolder;
+  color: #2F3C7E;
+}
+
+.para2{
+  font-size: larger;
+}
+
+.para3{
+  font-size: 30px;
+  color: #2F3C7E;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.offcanvas-header{
+  background-color: #2F3C7E;
+  color: #FBEAEB;
+  font-weight: bolder ;
+}
+
+.img1 {
+  width: 100%;
+  height: auto;
+
+}
+
+.button2{
+  border-radius: 4px;
+  color: #2F3C7E;
+  border-width: 2px;
+  border-color: #2F3C7E;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.heading{
+  background-color: #2F3C7E;
+}
+
+.image1{
+  width: 100%;
+  height:320px;
+
+}
+
+.heading2{
+  color: #2F3C7E;
+}

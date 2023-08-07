@@ -1,0 +1,32 @@
+.container{
+  padding: 95px;
+  border: 2px;
+  border-color: black;
+ 
+}
+
+.signup{
+  border-radius: 3px;
+  background-color: #2F3C7E;
+  color: #FBEAEB;
+  padding: 9px 18px 9px 18px;
+  border: none;
+  font-weight: bold;
+}
+
+h2{
+  color: #2F3C7E;
+  font-size: 40px;
+}
+
+form{
+  background-color: #FBEAEB;
+  border-radius: 10px;
+  transition: .5s ease-in-out;
+}
+
+form:hover{
+  transform: scale(1.03);
+}
+
+

@@ -1,0 +1,97 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="buttoncls col-4 text-center">
+      <div>
+        <button type="button" class="buttons1" data-bs-toggle="modal" data-bs-target="#exampleModal-1">View profile</button>
+      </div>
+      <div>
+        <button type="button" class="buttons1" data-bs-toggle="modal" data-bs-target="#exampleModal">Balance enquiry</button>
+      </div>
+      <div>
+        <button type="button" class="buttons1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Money transfer</button>
+      </div>
+      <div>
+        <button class="buttons1">Account statement</button>
+      </div>
+      <div>
+        <button class="buttons1">Log out</button>
+      </div>
+      <div>
+        <button class="buttons1">Delete account</button>
+      </div>
+    </div>
+    <div class="division-1 text-center col-8">
+      <h1>Welcome misri</h1>
+      <h3 class="pt-4">Enjoy Net Banking With <span>SBI</span></h3>
+      <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eveniet ratione consectetur, minima quaerat
+        adipisci saepe quam. Eligendi error maiores deserunt nulla molestiae iste perferendis, sunt tempore labore ipsa
+        est. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae cupiditate sapiente mollitia id nulla,
+        minus quas nostrum nisi architecto odio earum laudantium accusamus eos aliquam ab, magni amet impedit obcaecati.
+      </p>
+    </div>
+  </div>
+
+
+  <!-- Modal-balance enquiry -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Balance details</h1>
+          
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="https://i.postimg.cc/5tFZTynL/download.jpg" alt="" class="center">
+          <p class="para1 text-center">Hi misri</p>
+          <p class="para2 text-center">Your current balance in account number 1000 is</p>
+          <p class="para3 text-center">Balance 95400</p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- offcanvas-money transfer -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Money Transfer</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="container">
+        <img src="https://i.postimg.cc/PJTfd9xX/download.png" alt="" class="img1">
+        <form action="">
+          <input type="text" placeholder="Recipient account number" class="mt-4 form-control">
+          <input type="text" placeholder="Account to transfer"  class="mt-4 form-control">
+          <input type="text" placeholder="Password"  class="mt-4 form-control">
+
+          <button class="button2 mt-4 form-control">Transfer</button>
+
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Modal-view profile -->
+<div class="modal fade" id="exampleModal-1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="heading modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img class="text-center image1" src="https://i.postimg.cc/gkPDVDwv/profile-icon-design-free-vector.jpg" alt="">
+        <h2 class="text-center heading2">Profile details</h2>
+        <p class="text-center fs-4">User Name: Misri</p>
+        <p class="text-center fs-4">Account Number: 1000</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
