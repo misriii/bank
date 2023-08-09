@@ -15,18 +15,13 @@ export class LoginComponent implements OnInit{
     
   }
 
-  login(){
-    alert("login clicked")
+  login(a:any,b:any){
+    console.log(a.value);
+    console.log(b.value);
+    
+    
   }
   
-  accnoChange(event:any){
-    console.log(event.target.value);
-    
-  }
-
-  passChange(event:any){
-    console.log(event.target.value);
-    
-  }
+  
 
 }

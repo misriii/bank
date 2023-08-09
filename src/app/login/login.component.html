@@ -9,16 +9,16 @@
       <h1 class="text-center">Sign in</h1>
   
       <div>
-        <input (change)="accnoChange($event)" type="text" id="e1" name="accno" class="form-control mt-3" [placeholder]="data2">
+        <input #acno type="text" id="e1" name="accno" class="form-control mt-3" [placeholder]="data2">
       </div>
   
       <div>
-        <input (change)="passChange($event)" type="text" id="p1" name="pass" class="form-control mt-5" placeholder="Enter password">
+        <input #psw type="text" id="p1" name="pass" class="form-control mt-5" placeholder="Enter password">
   
       </div>
   
       <div class="but-1">
-        <button (click)="login()" type="submit" class="button-1 mt-4">Login</button>
+        <button (click)="login(acno, psw)" type="button" class="button-1 mt-4">Login</button>
   
       </div>
       <p class="para-1 mt-2 text-center">Don't have account?<a href=""> Create account</a></p>
