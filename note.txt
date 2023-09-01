@@ -14,3 +14,56 @@ html - view
    1.2 - view to component
         1.2.1 - event binding (event)="method()"
         1.2.2 - $event binding - onchange - change (event)="method($event)"
+        1.2.3 - event binding using template rendering variable - #variable
+
+2 - two way binding
+
+   2.1 - ngModel - FormsModule
+
+folder          - js files - class - methods
+library/package - module - class - methods  
+
+
+angular services
+---------------------
+
+a ts file contains methods and datas, all component can access datas inside services
+
+----command - ng g s ServiceName
+
+(pic phone)
+
+one direction only
+can access for any component
+
+redirection in angular
+---------------------------
+
+
+path set
+
+redirection in methods
+------------------------
+
+navigateByUrl    - methods
+Router           - class
+AppRoutingModule - module
+
+link
+-----
+
+href - routerLink
+
+depentancy injection
+--------------------
+
+to use properties(methods and variables) of one class in another class
+
+constructor(accessSpecifier variable:ClassName){
+
+}
+
+access specifier - private(injected class available only in that class)
+                   /public(injected class available in all other classess of that file)
+
+access specifier variable:Cla

@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../bankservices/data.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+
+  sdata:any
+
+  constructor(private ds:DataService){}
+
+  ngOnInit(): void {
+    setTimeout(()=>{
+      this.ds.serviceMethod()
+
+    },2000)
+
+    this.sdata=this.ds.data
+    }
+    
+  
 
 }
