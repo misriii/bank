@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl: any = "http://localhost:5000"
+  baseUrl: any = "http://localhost:5001"
 
   constructor(private http: HttpClient) { }
 
@@ -43,6 +43,11 @@ export class DataService {
 
   accountStatementHistory(acno:any){
     return this.http.get(`${this.baseUrl}/bankuser/account-statement/${acno}`)
+  }
+
+  // api to delete account
+  accountDeleteApi(acno:any){
+    return this.http.delete(`${this.baseUrl}/bankuser/delete-account/${acno}`)
   }
 }
 

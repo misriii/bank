@@ -22,7 +22,7 @@
     </div>
     <div class="division-1 text-center col-8">
 
-      <app-delete [data]="dAcno" (onCancel)="cancelp()"></app-delete>
+      <app-delete [data]="dAcno" (onCancel)="cancel()" (onDelete)="yesDelete($event)"></app-delete>
 
       <h1 [ngClass]="dAcno?'s1':''" >Hi. Welcome <span>{{name}}</span></h1>
       <h3 [ngClass]="dAcno?'s1':''"  class="pt-4">Enjoy Net Banking With <span>SBI</span></h3>

@@ -128,8 +128,17 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  cancelp() {
+  cancel() {
     this.dAcno = ""
+  }
+
+  yesDelete(event: any){
+this.ds.accountDeleteApi(event).subscribe({
+  next:(data:any)=>{
+    alert('data.message')
+    this.logout()
+  }
+})    
   }
 
 }

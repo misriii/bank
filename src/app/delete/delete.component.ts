@@ -10,6 +10,7 @@ export class DeleteComponent implements OnInit {
   @Input() data: string | undefined
 
   @Output() onCancel = new EventEmitter()
+  onDelete: any;
 
   constructor() { }
 
@@ -21,6 +22,6 @@ export class DeleteComponent implements OnInit {
   }
 
   yesDelete(){
-    alert("Delete api call")
-  }
+this.onDelete.emit(this.data) 
+ }
 }
