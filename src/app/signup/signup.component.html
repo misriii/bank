@@ -1,23 +1,35 @@
 <div class="container w-50">
 
   <div>
-    <form action="" class="border p-4">
+    <form [formGroup]="signupForm" class="border p-4">
       <h2 class="text-center">Signup</h2>
   
       <div>
-        <input type="number" id="" name="" class="form-control mt-3" placeholder="Account number">
+        <input formControlName="acno" type="text" id="a1" name="acno" class="form-control mt-3" placeholder="Account number">
+      </div>
+      <div *ngIf="this.signupForm.get('acno')?.errors && this.signupForm.get('acno')?.touched">
+        <p class="text-danger ms-2">Accept only numbers</p>
       </div>
   
       <div>
-        <input type="text" id="" name="" class="form-control mt-5" placeholder="Username">
+        <input formControlName="uname" type="text" id="u1" name="uname" class="form-control mt-3" placeholder="Username">
+      </div>
+      <div *ngIf="this.signupForm.get('uname')?.errors && this.signupForm.get('uname')?.touched">
+        <p class="text-danger ms-2">Please include charecters only</p>
       </div>
   
       <div>
-        <input type="text" id="" name="" class="form-control mt-5" placeholder="Enter password">
+        <input formControlName="psw" type="password" id="p1" name="pasw1" class="form-control mt-3" placeholder="Enter password">
+      </div>
+      <div *ngIf="this.signupForm.get('psw')?.errors && this.signupForm.get('psw')?.touched">
+        <p class="text-danger ms-2">Please include characters and numbers only</p>
       </div>
   
       <div>
-        <input type="text" id="" name="" class="form-control mt-5" placeholder="Confirm password">
+        <input formControlName="cpsw" type="password" id="p2" name="pasw2" class="form-control mt-3" placeholder="Confirm password">
+      </div>
+      <div *ngIf="pswCheck">
+        <p class="text-danger ms-2">Password doesn't match</p>
       </div>
   
       <div class="text-center">

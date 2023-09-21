@@ -64,6 +64,114 @@ constructor(accessSpecifier variable:ClassName){
 }
 
 access specifier - private(injected class available only in that class)
-                   /public(injected class available in all other classess of that file)
+                  /public(injected class available in all other classess of that file)
 
-access specifier variable:Cla
+
+
+form validation in angular
+-----------------------------
+
+1- template driven form - html
+2- model driven form(reactive form) - html,a model in ts file
+
+                     - model creation
+                     ------------------
+                      - group() - method
+                      - formBuilder - class
+                      - reactiveFormsModule - module
+
+                      Advantages
+                      ----------
+                      easy validation
+                      easy data binding without other data binding methods
+
+Regular expressions
+--------------------
+
+string type data rules
+
+'[abc]' - either a or b or can
+'[^abc]' - except a or b or can
+'[a-z]' - all small letters
+'[^a-z]' - except all small letters
+'[A-B]' - all capital letters
+'[^A-B]' - except all capital letters
+
+'[a-zA-Z0-9]' - all small,capital letters and 0-9 numbers
+
+quantifiers
+-----------
+
+'[a-zA-b]+' - min count=1 max=...
+'[a-zA-b]*' - min count=0 max=...
+'[a-zA-b]{5}' - exact 5 numbers
+'[a-zA-b]{5,10}' - min length=5 max=10
+
+'[a-zA-b]' - '[a-zA-=b]{1}'
+
+KL05RD1223
+'[K][L][0-9]{2}[A-Z]{2}[0-9]{4}'
+
+
+DOM manipulation-
+
+Angular directives
+--------------------
+
+component directive - component creation - ng g c compNmae
+structural directive - changing the structure og dom - *ngIf
+                       change the structure conditionally
+
+attribute directive  -change the dom with attributes
+                      ngclass
+
+Api handling in angular
+-----------------------
+
+-create
+
+methods - get,post,put,patch,delete
+class- HttpClient
+module- HttpClientModule
+
+
+-ajax - fetch
+
+resolve asynchronous in ts
+--------------------------
+
+js - promise - resolve - then()
+               reject - catch()
+
+ts - observable - resolve - subscribe()
+                - reject - catch()
+
+Angular pipe
+-------------
+used to transform data format
+
+filter- using data transformtion - pipe
+
+pipe creation in angular
+-------------------------
+
+command->
+ng g pipe pipeName
+
+transform(data to transform,search string,array key)
+
+data to transform-trasaction array
+search string-"","credit","debit"
+array key-type
+
+parent child communication in angular
+--------------------------------------
+
+parent to child- @Input()
+child to parent- @Output()
+
+
+event creation
+--------------
+
+EventEmitter- class used to create user defined events

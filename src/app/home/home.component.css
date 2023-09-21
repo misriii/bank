@@ -90,3 +90,19 @@ span{
 .heading2{
   color: #2F3C7E;
 }
+
+input{
+  width: 340px;
+}
+
+.c1{
+  color: green;
+}
+
+.c2{
+  color: red;
+}
+
+.s1{
+  display: none;
+}

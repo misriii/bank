@@ -4,30 +4,37 @@
 
 
   <div>
-    <form class="border border-1 p-3" action="">
-  
+    <form (ngSubmit)="login()" [formGroup]="loginForm" class="border border-1 p-3" action="">
+
       <h1 class="text-center">Sign in</h1>
-  
+
+
       <div>
-        <input [(ngModel)]="acno" type="text" id="e1" name="accno" class="form-control mt-3" [placeholder]="data2">
+        <input formControlName="acno" type="text" id="u1" name="acno" class="form-control mt-3"
+          placeholder="Account Number">
       </div>
-  
+      <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+        <p class="text-danger ms-2">Please include numbers only</p>
+      </div>
+
       <div>
-        <input [(ngModel)]="psw" type="text" id="p1" name="pass" class="form-control mt-5" placeholder="Enter password">
-  
+        <input formControlName="psw" type="password" id="p1" name="pasw1" class="form-control mt-3"
+          placeholder="Enter password">
       </div>
-  
+      <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+        <p class="text-danger ms-2">Please include characters and numbers only</p>
+      </div>
+
       <div class="but-1">
-        <button (click)="login()" type="submit" class="button-1 mt-4">Login</button>
-  
+        <button type="submit" class="button-1 mt-4">Login</button>
+
       </div>
       <p class="para-1 mt-2 text-center">Don't have account?<a routerLink="signup"> Create account</a></p>
-  
-  
-  
-    </form>
-  
-    
-  
-</div>
 
+
+
+    </form>
+
+
+
+  </div>

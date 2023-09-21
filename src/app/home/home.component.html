@@ -2,35 +2,41 @@
   <div class="row">
     <div class="buttoncls col-4 text-center">
       <div>
-        <button type="button" class="buttons1" data-bs-toggle="modal" data-bs-target="#exampleModal-1">View profile</button>
+        <button (click)="getProfile()" type="button" class="buttons1" data-bs-toggle="modal" data-bs-target="#exampleModal-1">View profile</button>
       </div>
       <div>
-        <button type="button" class="buttons1" data-bs-toggle="modal" data-bs-target="#exampleModal">Balance enquiry</button>
+        <button (click)="getbalance()" type="button" class="buttons1" data-bs-toggle="modal" data-bs-target="#exampleModal">Balance enquiry</button>
       </div>
       <div>
         <button type="button" class="buttons1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Money transfer</button>
       </div>
       <div>
-        <button class="buttons1">Account statement</button>
+        <button class="buttons1" routerLink="/history">Account statement</button>
       </div>
       <div>
-        <button class="buttons1">Log out</button>
+        <button (click)="logout()" class="buttons1">Log out</button>
       </div>
       <div>
-        <button class="buttons1">Delete account</button>
+        <button (click)="deleteActive()" class="buttons1">Delete account</button>
       </div>
     </div>
     <div class="division-1 text-center col-8">
-      <h1>{{sdata}}</h1>
-      <h1>Welcome misri</h1>
-      <h3 class="pt-4">Enjoy Net Banking With <span>SBI</span></h3>
-      <p class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eveniet ratione consectetur, minima quaerat
+
+      <app-delete [data]="dAcno" (onCancel)="cancelp()"></app-delete>
+
+      <h1 [ngClass]="dAcno?'s1':''" >Hi. Welcome <span>{{name}}</span></h1>
+      <h3 [ngClass]="dAcno?'s1':''"  class="pt-4">Enjoy Net Banking With <span>SBI</span></h3>
+
+    
+
+      <p [ngClass]="dAcno?'s1':''"  class="pt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eveniet ratione consectetur, minima quaerat
         adipisci saepe quam. Eligendi error maiores deserunt nulla molestiae iste perferendis, sunt tempore labore ipsa
         est. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae cupiditate sapiente mollitia id nulla,
         minus quas nostrum nisi architecto odio earum laudantium accusamus eos aliquam ab, magni amet impedit obcaecati.
       </p>
     </div>
   </div>
+
 
 
   <!-- Modal-balance enquiry -->
@@ -40,13 +46,13 @@
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Balance details</h1>
           
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <img src="https://i.postimg.cc/5tFZTynL/download.jpg" alt="" class="center">
-          <p class="para1 text-center">Hi misri</p>
-          <p class="para2 text-center">Your current balance in account number 1000 is</p>
-          <p class="para3 text-center">Balance 95400</p>
+          <p class="para1 text-center">Hi {{name}}</p>
+          <p class="para2 text-center">Your current balance in account number {{acno}} is</p>
+          <p class="para3 text-center">Balance {{balance}}</p>
         </div>
         <div class="modal-footer">
         </div>
@@ -63,13 +69,22 @@
     <div class="offcanvas-body">
       <div class="container">
         <img src="https://i.postimg.cc/PJTfd9xX/download.png" alt="" class="img1">
-        <form action="">
-          <input type="text" placeholder="Recipient account number" class="mt-4 form-control">
-          <input type="text" placeholder="Account to transfer"  class="mt-4 form-control">
-          <input type="text" placeholder="Password"  class="mt-4 form-control">
+        <form [formGroup]="moneyTransferForm" action="">
+          
+          <input formControlName="rAcno" type="text" placeholder="Recipient account number" id="rac" name="ac" class="mt-3" form-control>
+          <p *ngIf="moneyTransferForm.get('rAcno')?.errors&&moneyTransferForm.get('rAcno')?.touched" class="text-danger">Please provide numbers</p>
 
-          <button class="button2 mt-4 form-control">Transfer</button>
+          <input formControlName="amount" type="text" placeholder="Account to transfer"  class="mt-3" id="amnt" name="amn" form-control>
+          <p *ngIf="moneyTransferForm.get('amount')?.errors&&moneyTransferForm.get('amount')?.touched" class="text-danger">Please provide numbers</p>
 
+          <input formControlName="psw" type="password" placeholder="Password"  class="mt-3" id="ps" name="psn" form-control>
+          <p *ngIf="moneyTransferForm.get('psw')?.errors&&moneyTransferForm.get('psw')?.touched" class="text-danger">Include characters and numbers</p>
+
+          <button (click)="moneyTransfer()" class="button2 mt-3 form-control">Transfer</button>
+
+          <div class="text-center p-3">
+            <h4 [ngClass]="msgColor?'c1':'c2'">{{message}}</h4>
+          </div>
         </form>
       </div>
       
@@ -86,8 +101,10 @@
       <div class="modal-body">
         <img class="text-center image1" src="https://i.postimg.cc/gkPDVDwv/profile-icon-design-free-vector.jpg" alt="">
         <h2 class="text-center heading2">Profile details</h2>
-        <p class="text-center fs-4">User Name: Misri</p>
-        <p class="text-center fs-4">Account Number: 1000</p>
+        <p class="text-center fs-4">User Name: {{name}}
+        </p>
+        <p class="text-center fs-4">Account Number: {{acno}}
+        </p>
 
       </div>
       <div class="modal-footer">

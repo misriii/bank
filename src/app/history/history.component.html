@@ -1,0 +1,71 @@
+<
+  <div class="container text-center">
+
+    <h1 class="text-center p-4 text-danger">Account Statement</h1>
+    <div class="row">
+      <div class="col-7 text-center">
+
+        <div class="p-4">
+          <button (click)="filterData('')"> All </button>
+          <button (click)="filterData('DEBIT')">Debit</button>
+          <button (click)="filterData('CREDIT')">Credit</button>
+
+        </div>
+
+        <div *ngIf="spinner" class="text-center text-primary">
+          <i class="fa-sharp fa-solid fa-spinner fa-spin fa-3x"></i>        </div>
+
+        <table *ngIf="!spinner" class="table table-primary">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Type</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Account number</th>
+              <th scope="col">Date</th>
+
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <!-- data | pipename:   searchstring:searchkey -->
+            <tr *ngFor="let i of transactionArray | filter: searchTerm:'type', let j=index">
+              <th scope="row">{{j+1}}</th>
+              <td>{{i.type}}</td>
+              <td>{{i.amount}}</td>
+              <td>{{i.tacno}}</td>
+              <td>{{i.date}}</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+        <div class="p-4">
+          <button>Export as <i class="fa fa-download"></i></button>
+        </div>
+
+      </div>
+
+
+      <div class="col-5 text-center">
+
+        <h4>{{date | date : 'short'}}</h4>
+
+        <img src="../../assets/1728987.png" alt="">
+
+
+        <div class="p-4">
+
+
+          <button (click)="backtohome()" class="">Back to <i class="fa fa-home"></i></button>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
