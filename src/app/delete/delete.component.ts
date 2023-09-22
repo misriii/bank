@@ -10,7 +10,7 @@ export class DeleteComponent implements OnInit {
   @Input() data: string | undefined
 
   @Output() onCancel = new EventEmitter()
-  onDelete: any;
+  @Output() onDelete = new EventEmitter()
 
   constructor() { }
 

@@ -175,3 +175,8 @@ event creation
 --------------
 
 EventEmitter- class used to create user defined events
+
+header creation in angular
+--------------------------
+
+HttpHeaders- class used to create header object

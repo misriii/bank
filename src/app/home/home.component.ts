@@ -39,6 +39,8 @@ export class HomeComponent implements OnInit {
     if (!localStorage.getItem('currentAcno')) {
       this.rout.navigateByUrl("")
       alert("Please login first")
+    }else{ 
+      this.acno = JSON.parse(localStorage.getItem("currentAcno") || "")
     }
 
   }

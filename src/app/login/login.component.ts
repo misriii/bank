@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit{
 
           localStorage.setItem("currentAcno", JSON.stringify(acno))
           localStorage.setItem("currentUname", result.currentUser)
+          localStorage.setItem("token",JSON.stringify(result.token))
           alert(result.message)
           this.rout.navigateByUrl("home")
         },
