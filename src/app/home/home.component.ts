@@ -137,7 +137,7 @@ export class HomeComponent implements OnInit {
   yesDelete(event: any){
 this.ds.accountDeleteApi(event).subscribe({
   next:(data:any)=>{
-    alert('data.message')
+    alert(data.message)
     this.logout()
   }
 })    

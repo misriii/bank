@@ -9,7 +9,7 @@ const options = {
   providedIn: 'root',
 })
 export class DataService {
-  baseUrl: any = 'http://localhost:5001';
+  baseUrl: any = 'https://bank-server-sadq.onrender.com';
 
   constructor(private http: HttpClient) {}
 
